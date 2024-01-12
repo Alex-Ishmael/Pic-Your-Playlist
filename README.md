@@ -26,3 +26,4 @@ Once you have your virtual environment set up, you can install all the libraries
 
 After installing the PIP, simply run the main.py file
 
+## How it Works
