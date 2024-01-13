@@ -43,4 +43,15 @@ Additionally, the program accesses Spotify Client ID's, Spotify Usernames and Sp
 4) After that, the program uses the user inputted number of colors to consider to loop through the standard colors dictionary and add the number of considered colors to a new dictionary with the value being the      number of songs the color will get in the playlist. This is calculated by looking at the percent each color makes up of the total considered pixels. For example, if the user chose to consider 5 colors for the 
    playlist, then the total number of considered pixels is the sum of the pixels of all 5 colors. Then each color is evaluated on how much of the considered pixels they comprise. This percent is then evaluated in    3 cases.
    A) The percentage * 100 < 1, this means that the color comprises less than 1% of the playlist and is therefore not impactful enough to be included in the playlist.
-   B) The percentage * 10 < 1, this means that the color comprises
+   B) The percentage * 100 >= 1, but percentage * 10 < 1, this means that the color comprises less than 10% of the playlist, so the color will account for only 1 track in the playlist.
+   C) The percentage * 10 > 1, the color will account for the percentage * 10, rounded down to then earest whole number, amount of tracks.
+5) Now the program begins to interact with the Spotify API. It calls the environment variables and authenticates the Client ID, Client Secret, and RedirectURI with the Spotift API as well as declaring it's scope 
+   and making any urllib3 requests.
+6) The Spotify API only supports image uploads of 256KB and under so the program passes the user submitted image into the `compress_image` function which usese the Pillow library to gather pixel data and    
+   incrementally reduce the quality of the image until we meet the 256KB limit. The image is then converted into a base64 representation, as required by the Spotify API.
+7) Call the `make_playlist` function which creates a new playlist in the user's library and uploads the compressed base64 image as the playlist cover. Then it generates a name using the complex colors and       
+   genereates recommendations using the standard colors and the attributes I assigned. These attributes are then used to make API calls using the SpotiPy wrapper to generate Spotify recommendations based on the      color attributes. The tracks are added to the playlist as well as the playlist name.
+
+## How I Can Make It Better
+
+For Pick Your Playlist v2 I'd like to add a proper GUI and develop a mobile app using android studio. Having the program be accessible from a smartphone would allow for more seamless photo uploading and creating playlists on the go away from a laptop/desktop. Additionally, I would like to refine the colored attribute system to include more colors and take hue/luminence into account. Neon and very luminiscent colors are currently matched their more standard/dull variants and it would be ideal to include intesnity, vibrance, brightness, and saturation in the future.
