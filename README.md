@@ -41,4 +41,6 @@ Additionally, the program accesses Spotify Client ID's, Spotify Usernames and Sp
    testing. When standard_only is selected, `find_approx_color` finds the closest match to one of those 12 standard colors instead. We make two calls to `find approx_color` one for the compelx_colors to use for      the playlist name and one for simple_colors to use for our playlist recommendations. We add each color to their respective dictionary with the key as the color and the value as the count. This results in two 
    dictionaries, complex_colors and prominent_colors (the most common standard colors).
 4) After that, the program uses the user inputted number of colors to consider to loop through the standard colors dictionary and add the number of considered colors to a new dictionary with the value being the      number of songs the color will get in the playlist. This is calculated by looking at the percent each color makes up of the total considered pixels. For example, if the user chose to consider 5 colors for the 
-   playlist,
+   playlist, then the total number of considered pixels is the sum of the pixels of all 5 colors. Then each color is evaluated on how much of the considered pixels they comprise. This percent is then evaluated in    3 cases.
+   A) The percentage * 100 < 1, this means that the color comprises less than 1% of the playlist and is therefore not impactful enough to be included in the playlist.
+   B) The percentage * 10 < 1, this means that the color comprises
