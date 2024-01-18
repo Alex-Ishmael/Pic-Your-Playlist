@@ -4,6 +4,10 @@ This semeseter I was listening to a lot of music on bus rides and walks between 
 This all culminated in the idea of a program where I could take a picture and the program could look at the color data and curate a playlist for me directly in my spotify library. It also gave me a great excuse to delve into niche Python libraries and experiment with APIs and image processing. Check out the video below to see it in action!
 
 
+
+https://github.com/Alex-Ishmael/Pic-Your-Playlist/assets/92725864/3fc854d1-14b6-4deb-83b3-d4e6586daa38
+
+
 ## How to Run
 
 This program uses OpenCV, Pillow, NumPY, WebColors, and SpotiPy which all need to be installed. I recommend setting up a virtual environment and use PIP installation.
