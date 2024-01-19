@@ -5,7 +5,8 @@ This all culminated in the idea of a program where I could take a picture and th
 
 
 
-https://github.com/Alex-Ishmael/Pic-Your-Playlist/assets/92725864/3fc854d1-14b6-4deb-83b3-d4e6586daa38
+https://github.com/Alex-Ishmael/Pic-Your-Playlist/assets/92725864/d48afc8c-7c91-4097-8532-36578e9dcf57
+
 
 
 ## How to Run
